@@ -306,12 +306,6 @@ const drugList = [
      res.end(JSON.stringify({ success: false, message: '接口不存在' }));
    }
  });
- // 启动服务器（端口3000）
- const PORT = 3000;
- server.listen(PORT, () => {
-   console.log(`药典API已启动：http://localhost:${PORT}/api/drugs`);
- });
 
-  
 
 
