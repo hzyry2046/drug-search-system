@@ -126,7 +126,7 @@
 
         // 页面加载时先获取API的药物数据
         window.onload = function() {
-            fetch('http://localhost:3000/api/drugs')
+            fetch('/api/drugs')
                 .then(res => res.json())
                 .then(data => {
                     allDrugs = data.data; // 把API数据存到变量里
@@ -181,4 +181,5 @@
      </script>
  </body>
  </html>
+
 
