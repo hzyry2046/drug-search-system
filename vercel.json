@@ -1,22 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "drug-api.js", "use": "@vercel/node" }
+    { "src": "drug-api.js", "use": "@vercel/node" },
+    { "src": "*.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { 
-      "src": "/api/drugs", 
-      "dest": "/drug-api.js",
-      "methods": ["GET"]
-    },
-    { 
-      "src": "/api/drugs/(.*)", 
-      "dest": "/drug-api.js",
-      "methods": ["GET"]
-    },
-    { 
-      "src": "/(.*)", 
-      "dest": "/药物检索3.html" 
-    }
+    { "src": "/api/(.*)", "dest": "/drug-api.js" },
+    { "src": "/(.*)", "dest": "/药物检索3.html" }
   ]
 }
