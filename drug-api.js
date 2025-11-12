@@ -1,8 +1,16 @@
-// 修改为 Vercel Serverless 函数格式
+// drug-api.js
 module.exports = (req, res) => {
   // 设置响应头（允许跨域+返回JSON）
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  // 处理预检请求
+  if (req.method === 'OPTIONS') {
+    res.statusCode = 200;
+    return res.end();
+  }
   
   // 处理API请求：访问 /api/drugs 返回药物列表
   if (req.url === '/api/drugs' && req.method === 'GET') {
@@ -305,4 +313,5 @@ const drugList = [
  });
 
   
+
 
